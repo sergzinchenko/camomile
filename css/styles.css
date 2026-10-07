@@ -739,6 +739,7 @@ body.resizing-sidebar #sidebar * { pointer-events: none; }
 .mem-item > summary::-webkit-details-marker { display: none; }
 .mem-item > summary::before { content: '▸'; color: var(--text-muted); }
 .mem-item[open] > summary::before { content: '▾'; }
+.mem-item .tool-pre { margin-top: 6px; max-height: 40vh; }
 .mem-key { flex: 1; font-family: ui-monospace, Consolas, monospace; font-size: 12px; }
 .mem-size { font-size: 11px; color: var(--text-muted); font-variant-numeric: tabular-nums; }
 
@@ -1133,6 +1134,26 @@ body.resizing-sidebar #sidebar * { pointer-events: none; }
   margin-top: 6px;
   color: var(--text-secondary);
   font-size: 11px;
+}
+/* Блок JSON или кода в окнах и ленте. Высоту задаёт место применения,
+   а прокрутка нужна всегда: без неё длинное содержимое вылезало из рамки
+   и ложилось поверх следующих строк окна. */
+.tool-pre {
+  display: block;
+  margin: 0;
+  padding: 8px 10px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-primary);
+  tab-size: 2;
 }
 .message.tool-call .tool-pre {
   background: var(--bg-primary);
@@ -2365,6 +2386,34 @@ body.resizing-plan #plan-panel * { pointer-events: none; }
 .sec-tool { font-family: ui-monospace, Consolas, monospace; font-size: 14px; color: var(--text-primary); }
 .sec-cat { font-size: 11px; color: var(--warning); margin-left: auto; white-space: nowrap; }
 .sec-risks { margin: 4px 0 0 18px; font-size: 12px; color: var(--warning); line-height: 1.7; }
+
+/* Панели окна подтверждения: аргументы, код инструмента, замены. У каждой
+   своя прокрутка, поэтому пометки и кнопки под ними всегда видны. */
+.sec-panel {
+  padding: 8px 10px 10px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.sec-panel-head {
+  display: flex; align-items: baseline; gap: 10px;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.5px;
+  text-transform: uppercase; color: var(--text-secondary);
+}
+.sec-panel-meta {
+  margin-left: auto; white-space: nowrap;
+  font-size: 11px; font-weight: 400; letter-spacing: 0; text-transform: none;
+  color: var(--text-muted);
+}
+.sec-panel .tool-pre.sec-args { max-height: 38vh; }
+.sec-panel .tool-pre.sec-code { max-height: 32vh; }
+.sec-edit .tool-pre.sec-code { max-height: 18vh; }
+.sec-edit + .sec-edit { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--border); }
+.sec-edit-head { font-size: 12px; color: var(--text-primary); }
+.sec-edit-label { margin: 4px 0 2px; font-size: 11px; color: var(--text-muted); }
+.sec-notes { display: flex; flex-direction: column; gap: 6px; }
+.sec-note { font-size: 11px; color: var(--text-muted); }
+.sec-note-warn { font-size: 11px; color: var(--warning); }
 
 .files-restore {
   display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
