@@ -1,0 +1,2 @@
+# Pyodide как есть: размеры файлов сверяются с vendor/pyodide/manifest.json.
+vendor/pyodide/** -text

@@ -180,6 +180,9 @@ body {
 }
 .icon-preset:hover { border-color: var(--accent); }
 .icon-preset.active { border-color: var(--accent); background: var(--bg-tertiary); }
+.icon-preset img { width: 24px; height: 24px; border-radius: 4px; object-fit: contain; vertical-align: middle; }
+#user-guide-link { color: var(--text-secondary); border: 1px solid var(--border); border-radius: 50%; width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; flex: none; }
+#user-guide-link:hover { color: var(--accent); border-color: var(--accent); }
 
 /* Счётчик релизов. Мелко и нейтрально: это отметка версии, а не
    элемент управления, но кликом открывается история доработок. */

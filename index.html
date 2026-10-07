@@ -1,20 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta name="app-build" content="f419bba230">
+<meta name="app-build" content="00df159ad8">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Agent — Personal Assistant</title>
-<!-- Иконка вкладки и закладки. Нарисована прямо здесь, а не лежит
-     отдельным файлом: приложение открывают и как статические файлы,
-     и с диска, и отдельный favicon.ico при этом то и дело не находился,
-     а браузер молча показывал чужую иконку по умолчанию. SVG в data-URI
-     не требует ни запроса, ни правильного пути, и остаётся резким на
-     любом экране. По умолчанию — ✨, как в окне «Что нового»; свою
-     иконку пользователь выбирает в ⚙ Настройки → Отображение, и
-     приложение подменяет её при запуске (см. ui/ui-about.js). -->
-<link rel="icon" id="app-favicon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2254%25%22%20dominant-baseline%3D%22middle%22%20text-anchor%3D%22middle%22%20font-size%3D%2254%22%3E%E2%9C%A8%3C%2Ftext%3E%3C%2Fsvg%3E">
-<link rel="stylesheet" href="css/styles.css?v=d55310302f">
+<title>Camomile — Персональный помощник</title>
+<!-- Стандартная иконка Camomile; заменяется выбранной пользователем при запуске. -->
+<link rel="icon" id="app-favicon" href="assets/icons/camomile.png">
+<link rel="stylesheet" href="css/styles.css?v=a500b9a0cb">
 </head>
 <body>
 
@@ -30,7 +23,7 @@
     <!-- Имя агента задаёт пользователь при первом запуске (см.
          engines/about-engine.js). До этого здесь стоит подпись
          по умолчанию — именно подпись, а не имя. -->
-    <div class="logo" id="app-logo" title="Имя агента: ⚙ Настройки → Отображение"><span class="agent-icon" id="agent-icon" aria-hidden="true">✨</span> <span id="agent-name">AI Agent</span></div>
+    <div class="logo" id="app-logo" title="Имя агента: ⚙ Настройки → Отображение"><span class="agent-icon" id="agent-icon" aria-hidden="true"><img src="assets/icons/camomile.png" alt=""></span> <span id="agent-name">Camomile</span></div>
     <!-- Счётчик релизов: мелко, рядом с именем. Кликом открывается
          история доработок — то же окно, что показывается само, когда
          появилось что-то непрочитанное. -->
@@ -43,6 +36,7 @@
       <button class="tab-btn" data-tab="files">📎 Файлы</button>
     </div>
     <span id="connection-status"><span class="status-dot offline"></span></span>
+    <a id="user-guide-link" href="doc/user/index.html" target="_blank" rel="noopener" title="Руководство пользователя" aria-label="Руководство пользователя">?</a>
     <button id="settings-btn" title="Настройки">⚙</button>
   </header>
 
@@ -181,6 +175,6 @@
 <!-- MODALS CONTAINER -->
 <div id="modals"></div>
 
-<script src="app.min.js?v=f419bba230"></script>
+<script src="app.min.js?v=00df159ad8"></script>
 </body>
 </html>
