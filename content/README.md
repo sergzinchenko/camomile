@@ -24,7 +24,7 @@
 | `sap-adt-02-source-1.0.0.json` | ADT: исходный код | 1.0.0 | `adt_source`, `adt_object_structure`, `adt_message_class` |
 | `sap-adt-03-ddic-1.0.0.json` | ADT: словарь и CDS | 1.0.0 | `adt_ddic`, `adt_cds` |
 | `sap-adt-04-transports-1.0.0.json` | ADT: транспорты | 1.0.0 | `adt_transports`, `adt_transport` |
-| `sap-adt-05-data-1.0.0.json` | ADT: данные | 1.0.0 | `adt_table_data`, `adt_sql` |
+| `sap-adt-05-data-1.1.0.json` | ADT: данные | 1.1.0 | `adt_table_data`, `adt_sql` |
 
 Справочник систем и мандантов и текущая запись хранятся в памяти агента: sap.systems, sap.current (одна запись на весь агент), sap.settings (язык и вход Windows, общие для всех систем). Любой инструмент пакета при первом вызове сам спросит систему формой.
 
