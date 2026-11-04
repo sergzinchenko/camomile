@@ -1,2 +1,3 @@
-# Pyodide как есть: размеры файлов сверяются с vendor/pyodide/manifest.json.
+# Vendor-ресурсы как есть: проверяются манифестами.
 vendor/pyodide/** -text
+vendor/pdfjs/** -text
